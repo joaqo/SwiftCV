@@ -1,6 +1,30 @@
 import Foundation
 import COpenCV
 
+public struct Scalar {
+    internal var val1: Double
+    internal var val2: Double
+    internal var val3: Double
+    internal var val4: Double
+
+    public init(_ val1: Double, _ val2: Double, _ val3: Double, _ val4: Double) {
+      self.val1 = val1
+      self.val2 = val2
+      self.val3 = val3
+      self.val4 = val4
+    }
+}
+
+public struct Point {
+    internal var x: Int32
+    internal var y: Int32
+
+    public init(_ x: Int32, _ y: Int32) {
+        self.x = x
+        self.y = y
+    }
+}
+
 public struct Size {
     // TODO add Point struct
     internal var width: Int

@@ -7,9 +7,8 @@ let package = Package(
     name: "SwiftCV",
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
-        .library(
-        name: "SwiftCV",
-        targets: ["SwiftCV"]),
+        .library( name: "SwiftCV", targets: ["SwiftCV"]),
+        .executable(name: "demo", targets: ["demo"]),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -21,6 +20,9 @@ let package = Package(
         .target(
             name: "SwiftCV",
             dependencies: ["COpenCV"]),
+        .target(
+            name: "demo", dependencies: ["SwiftCV"],
+            path: "Sources/demo"),
         .testTarget(
             name: "SwiftCVTests",
             dependencies: ["SwiftCV"]),
